@@ -1,0 +1,34 @@
+// utilities/_spacing.scss
+@import './variables';
+
+@for $i from 0 through 5 {
+    .m-#{$i} {
+        margin: 0;
+    }
+
+    .mt-#{$i} {
+        margin-top: $i * $spacing-unit;
+    }
+
+    .mb-#{$i} {
+        margin-bottom: $i * $spacing-unit;
+    }
+
+    .ml-#{$i} {
+        margin-left: $i * $spacing-unit;
+    }
+
+    .mr-#{$i} {
+        margin-right: $i * $spacing-unit;
+    }
+
+    .my-#{$i} {
+        margin-top: $i * $spacing-unit;
+        margin-bottom: $i * $spacing-unit;
+    }
+
+    .mx-#{$i} {
+        margin-right: $i * $spacing-unit;
+        margin-left: $i * $spacing-unit;
+    }
+}

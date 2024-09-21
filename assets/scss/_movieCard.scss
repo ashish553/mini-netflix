@@ -1,0 +1,47 @@
+.movie-thumbnail{
+    border: 1px solid whitesmoke;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: box-shadow .3s;
+    .poster img{
+        width: 100%;
+        transition: box-shadow .3s;
+    }
+    .card-body{
+        // display: flex;
+        padding: 0 1rem;
+        .title{
+            font-weight: lighter;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        width: 40%;
+    }
+    @media screen and (max-width: 576px) {
+        width: 100%;
+    }
+    &:hover{
+        box-shadow: 0 0 11px rgb(255, 255, 255); 
+    }
+    &:focus{
+        box-shadow: 0 0 11px rgb(255, 255, 255); 
+    }
+}
+
+// moviesList
+.movies-list{
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 2.5rem auto;
+    @media screen and (max-width: 767px) {
+        justify-content: center;
+    }
+}

@@ -1,0 +1,17 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    padding: 1rem;
+    background: rgb(31, 30, 30);
+    h2{
+        color: #E50914;
+        text-decoration: none;
+    }
+    position: sticky;
+    top: 0;
+    padding: 1.5rem;
+    font-size: larger;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

@@ -1,0 +1,25 @@
+@use 'movieCard';
+@use 'shimmer';
+@use 'badge';
+@use 'header';
+@use 'movieInfo';
+@import 'customisations';
+@import 'utilities';
+
+
+html {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.container {
+  width: 80%;
+  margin: 4rem auto;
+}
+
+
+body {
+  color: white;
+  background: #161616;
+}
