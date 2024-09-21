@@ -3,6 +3,7 @@ export default {
   ssr: true,
   server: {
     port: process.env.PORT || 3001,
+    host: process.env.HOST || 'localhost'
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
