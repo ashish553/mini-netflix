@@ -58,7 +58,6 @@ export default {
             // Check if Store has current requested movie data,
             // If Yes, then return data from Store
             if (store.state.movies[params.id]) {
-                console.log('From store');
                 
                 return {
                     movieDetails: store.state.movies[params.id]
@@ -74,7 +73,6 @@ export default {
 
         } catch (err) {
 
-            console.log(err);
             error({ message: err.message, errCode: 'm101', statusCode: 404 })
 
         }

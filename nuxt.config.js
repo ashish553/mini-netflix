@@ -1,6 +1,9 @@
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: true,
+  server: {
+    port: process.env.PORT || 3000,
+  },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -59,7 +62,6 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    // Configure the optimization options
     optimization: {
       minimize: true, // Ensure minification
     },
