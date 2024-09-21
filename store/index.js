@@ -1,34 +1,19 @@
 export const state = () => ({
     movies: {
-        'hey': 'hhh'
-    },
-    // test1: [],
-})
 
-// export const getters = {
-//     getCounter(state) {
-//       return state.movies
-//     }
-// }
+    },
+})
 
 export const mutations = {
     addMovie: (state, payload) => {
-        // console.log('ayload', payload);
 
         const { imdbID } = payload
         state.movies[imdbID] = payload
-        // console.log(state.movies);
 
     },
-    // pushTest: (state,payload) => {
-    //     state.test1.push(payload);
-    // }
 }
 
 export const actions = {
-    // cacheCurrentMovie: ({commit}, payload) => {
-    //     commit('addMovie', payload)
-    // },
     fetchMovie: async ({ commit }, { id }) => {
         try {
 

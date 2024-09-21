@@ -41,7 +41,6 @@ export default {
     async reachedToBottom() {
       
       if (window.scrollY + window.innerHeight >= document.body.scrollHeight && !this.reachedBottom) {
-        console.log('reached bottom');
         await this.fetchMovies()
 
       }
@@ -52,8 +51,7 @@ export default {
     window.addEventListener('scroll', this.reachedToBottom)
   },
   beforeDestroy() {
-    // Removing scrool event listener
-    console.log('removing lsitener');
+    // Removing scroll event listener
 
     window.removeEventListener('scroll', this.reachedToBottom);
   },
