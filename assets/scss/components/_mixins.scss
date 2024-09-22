@@ -1,0 +1,11 @@
+@mixin cardsContainer {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 2.5rem auto;
+    @media screen and (max-width: 767px) {
+        justify-content: center;
+    }
+}

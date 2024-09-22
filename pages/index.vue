@@ -1,12 +1,12 @@
 <template>
   <div class="container">
-    <div v-if="!moviesList.length">
-      <Shimmer />
-    </div>
-    <section v-else>
+    <section>
       <h1 class="align-center">Discover. Watch. Enjoy.</h1>
       <p class="align-center">Explore new releases, trending films, and all-time favorites.</p>
-      <MoviesList :moviesList="moviesList" />
+      <div v-if="!moviesList.length">
+        <Shimmer />
+      </div>
+      <MoviesList v-else :moviesList="moviesList" />
     </section>
   </div>
 </template>
@@ -26,35 +26,42 @@ export default {
     return {
       moviesList: [],
       pageNumber: 1,
-      reachedBottom: false
+      reachedBottom: false // to stop the multiple fetchMovie() call after page bottom has reached
     }
   },
   methods: {
+
     async fetchMovies() {
+
       this.reachedBottom = true
       const data = await (await fetch('/api/getData/' + this.pageNumber)).json()
-      const tempData = [...this.moviesList, ...data.data]
-      this.moviesList = tempData.filter((each, index) => tempData.indexOf(each))
+      this.moviesList = [...this.moviesList, ...data.data]
       this.pageNumber++
       this.reachedBottom = false
+
     },
+
     async reachedToBottom() {
-      
+
       if (window.scrollY + window.innerHeight >= document.body.scrollHeight && !this.reachedBottom) {
         await this.fetchMovies()
-
       }
+
     }
   },
+
   async mounted() {
-    await this.fetchMovies()
+
+    await this.fetchMovies() // Load initial data when user loads the page
+
     window.addEventListener('scroll', this.reachedToBottom)
   },
-  beforeDestroy() {
-    // Removing scroll event listener
 
+  beforeDestroy() {
+    // Removing scroll event listener when compoenets unmount
     window.removeEventListener('scroll', this.reachedToBottom);
   },
+
   head() {
     return {
       title: 'Homepage',
@@ -62,7 +69,15 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: `Here is the list of all movies`
+          content: `Discover. Watch. Enjoy.`
+        },
+        {
+          property: 'og:title',
+          content: `Discover. Watch. Enjoy.`,
+        },
+        {
+          property: 'og:description',
+          content: `Discover. Watch. Enjoy.`,
         },
       ]
     }

@@ -1,8 +1,8 @@
-@use 'movieCard';
-@use 'shimmer';
-@use 'badge';
-@use 'header';
-@use 'movieInfo';
+@use './components/movieCard';
+@use './components/shimmer';
+@use './components/badge';
+@use './components/header';
+@use './components/movieInfo';
 @import 'customisations';
 @import 'utilities';
 

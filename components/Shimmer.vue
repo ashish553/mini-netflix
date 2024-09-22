@@ -1,8 +1,6 @@
 <template>
     <div class="shimmers">
-        <!-- <div > -->
             <ShimmerCard v-for="i in 3" :key="i"/>
-        <!-- </div> -->
     </div>
 </template>
 

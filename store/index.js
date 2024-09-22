@@ -1,16 +1,14 @@
-export const state = () => ({
-    movies: {
-
-    },
+export const state = () => ({ 
+    movies: {},
 })
 
 export const mutations = {
+    
     addMovie: (state, payload) => {
-
         const { imdbID } = payload
         state.movies[imdbID] = payload
-
     },
+
 }
 
 export const actions = {
